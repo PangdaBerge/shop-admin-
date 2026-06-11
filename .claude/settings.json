@@ -1,0 +1,19 @@
+{
+  "ignore": [
+    "node_modules/**",
+    "dist/**",
+    "dist-ssr/**",
+    "__pycache__/**",
+    "*.pyc",
+    "*.pyo",
+    "*.db",
+    "*.sqlite",
+    "*.sqlite3",
+    "*.egg-info/**",
+    ".venv/**",
+    "venv/**",
+    "*.log",
+    ".DS_Store",
+    "package-lock.json"
+  ]
+}
