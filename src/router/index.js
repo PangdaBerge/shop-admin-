@@ -18,6 +18,12 @@ const routes = [
     component: () => import('@/views/Dashboard.vue'),
     // requiresAuth 标记该页面需要登录权限才能访问
     meta: { title: '控制台 - 商城后台管理系统', requiresAuth: true }
+  },
+  {
+    path: '/taskboard',
+    name: 'TaskBoard',
+    component: () => import('@/views/TaskBoard.vue'),
+    meta: { title: '任务看板 - 商城后台管理系统', requiresAuth: true }
   }
 ]
 
