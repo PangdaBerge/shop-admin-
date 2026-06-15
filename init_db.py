@@ -1,7 +1,11 @@
 import sqlite3
+from pathlib import Path
+
+# 数据库文件绝对路径 —— 无论从哪个目录启动都能正确找到
+DB_PATH = Path(__file__).parent / 'shop_system.db'
 
 # 1. 连接到本地数据库文件（如果不存在会自动创建）
-conn = sqlite3.connect('shop_system.db')
+conn = sqlite3.connect(str(DB_PATH))
 cursor = conn.cursor()
 
 # 2. 强行一次性执行所有 SQL 语句

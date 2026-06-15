@@ -1,9 +1,13 @@
 import sqlite3
+from pathlib import Path
 from fastapi import FastAPI, HTTPException, Header
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
+
+# 数据库文件绝对路径 —— 无论从哪个目录启动都能正确找到
+DB_PATH = Path(__file__).parent / 'shop_system.db'
 
 app = FastAPI()
 
@@ -17,7 +21,7 @@ app.add_middleware(
 
 
 def get_db():
-    conn = sqlite3.connect('shop_system.db')
+    conn = sqlite3.connect(str(DB_PATH))
     conn.row_factory = sqlite3.Row
     return conn
 

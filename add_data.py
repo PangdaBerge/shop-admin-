@@ -1,7 +1,11 @@
 import sqlite3
+from pathlib import Path
+
+# 数据库文件绝对路径 —— 无论从哪个目录启动都能正确找到
+DB_PATH = Path(__file__).parent / 'shop_system.db'
 
 # 连接数据库
-conn = sqlite3.connect('shop_system.db')
+conn = sqlite3.connect(str(DB_PATH))
 cursor = conn.cursor()
 
 try:
